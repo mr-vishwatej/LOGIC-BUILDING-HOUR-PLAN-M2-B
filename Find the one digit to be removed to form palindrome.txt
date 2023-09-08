@@ -1,0 +1,21 @@
+String s=Integer.toString(input1);
+        int lp=0,up=s.length()-1;
+        while(lp<up)
+        {
+            char a=s.charAt(lp);
+            char b=s.charAt(up);
+
+            if(a!=b) 
+            {
+                if(s.charAt(lp+1)==b) return a-'0';
+                else return b-'0';
+            }
+            lp++;
+            up--;
+
+        }
+        return -1;
+
+		//throw new UnsupportedOperationException("digitRemove_Palin(int input1)");
+	}
+}

@@ -1,0 +1,44 @@
+ int s=input1;
+        input1--;
+        int cnt=1;
+        for(int i=input1;i>=1;i--)
+        {
+            if(input2==1)
+            {
+                if(cnt%2==0)
+                {
+                 s=s+i;
+                cnt++;
+
+                }
+                else
+                {
+                 s=s-i;
+                 cnt++;
+
+                }
+            }
+            else
+            {
+                if(cnt%2==0)
+                {
+                 s=s-i;
+                 System.out.print(s+" ");
+                cnt++;
+
+                }
+                else
+                {
+                 s=s+i;
+                   System.out.print(s+" ");
+                 cnt++;
+
+                }
+
+            }
+        }
+        return s;
+
+		//throw new UnsupportedOperationException("AddSub(int input1,int input2)");
+	}
+}

@@ -1,0 +1,108 @@
+        int len_1=input1.length();
+        int len_2=input2.length();
+        int cnt=0;
+        String s="";
+        if(len_1>len_2)
+        {
+             s+=input2.charAt(len_2-1);
+             s+=input1;
+             s=toggleString(s);  
+             String lft_no=Integer.toString(input3);
+             int n=lft_no.length();
+             int q=lft_no.charAt(input4-1)-'0';
+             int w=lft_no.charAt(n-input4)-'0';
+             s+=q;
+             s+=w;     
+        }
+        else if(len_2>len_1)
+        {
+             s+=input1.charAt(len_1-1);
+             s+=input2;
+             s=toggleString(s);  
+             String lft_no=Integer.toString(input3);
+             int n=lft_no.length();
+             int q=lft_no.charAt(input4-1)-'0';
+             int w=lft_no.charAt(n-input4)-'0';
+             s+=q;
+             s+=w; 
+        }
+        else if(input1.equals(input2))
+        {
+            s+=input1.charAt(len_1-1);
+             s+=input2;
+             s=toggleString(s);  
+             String lft_no=Integer.toString(input3);
+             int n=lft_no.length();
+             int q=lft_no.charAt(input4-1)-'0';
+             int w=lft_no.charAt(n-input4)-'0';
+             s+=q;
+             s+=w; 
+        }
+        else
+        {
+           String  h=input1.toLowerCase();
+           String  j=input2.toLowerCase();
+            for(int i=0;i<len_1-1;i++)
+            {
+                Character ch=h.charAt(i);
+                Character dh=j.charAt(i);
+                if(ch!=dh)
+                {
+                    if((int)ch<(int)dh)
+                    {
+                        Character k=h.charAt(len_1-1);
+                        s+=k;
+                        cnt=1;
+                        break;
+                    }
+                    else
+                    {
+                        Character k=j.charAt(len_2-1);
+                        s+=k;
+                        break; 
+                    }
+                }
+            }
+            if(cnt==1)
+             s+=input2;
+            else 
+              s+=input1;
+            s=toggleString(s);  
+             String lft_no=Integer.toString(input3);
+             int n=lft_no.length();
+             int q=lft_no.charAt(input4-1)-'0';
+             int w=lft_no.charAt(n-input4)-'0';
+             s+=q;
+             s+=w;
+            
+        }
+        return s;    
+    }
+    public static String toggleString(String s)
+    {
+        String t="";
+        for(int i=0;i<s.length();i++)
+        {
+            Character ch=s.charAt(i);
+           
+
+            int asci=(int)ch;
+            
+            if(asci>=65 && asci<=90)
+            {
+                int p=asci+32;
+                System.out.print(p+" ");
+                char c=(char)p;
+                t+=c;
+            }
+            else
+            {
+                int p=(asci-32);
+                 System.out.print(p+" ");
+                char c=(char)p;
+                t+=c;
+            }
+        }
+        return t;
+    }
+}
